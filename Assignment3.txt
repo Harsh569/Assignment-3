@@ -1,0 +1,378 @@
+Name : Harshad Uttam Sonawane
+
+-------------------Assignment 3--------------------------------------------
+
+----------------------------Problem 1-------------------------------------------
+
+1) Write a program to accept an integer N and calculate the sum of its digits. Please note N can have maximum 5 digits.
+
+function getSum(n)
+{
+    var sum = 0;
+    while (n != 0) {
+        sum = sum + n % 10;
+        n = parseInt(n / 10);
+    }
+    return sum;
+}
+ 
+
+var n =  123456;
+let text = n.toString();
+let len=text.length;
+if(len<=5)
+{
+document.write(getSum(n));
+}
+else
+{
+    document.write("number is more than 5 digit")
+}
+
+----------------------------Problem 2-------------------------------------------
+
+2) Write a program to accept an integer N and generate an integer M which is formed by reversing the digits of N. 
+Please note N can have maximum 5 digits.
+
+
+function reverse(n)
+{
+    var sum = n.split('').reverse().join('');
+    return sum;
+    
+}
+ 
+
+var n =  12345;
+let text = n.toString();
+let len=text.length;
+if(len<=5)
+{
+document.write(reverse(text));
+}
+else
+{
+    document.write("number is more than 5 digit")
+}
+
+----------------------------Problem 3-------------------------------------------
+
+3) Write a program to accept an integer N and generate an integer M which is formed by reversing the digits of N. 
+Please note N can have maximum 5 digits. Print the numbers N and M. Compare N with M and print the result.
+
+function reversecompare(n)
+{
+    var reverse1 = n.split('').reverse().join('');
+    let N = parseInt(n);
+    let M = parseInt(reverse1);
+    let compare="";
+    if(N > M)
+    {
+        compare = "N is greater than M";
+    }
+    else if(N < M)
+    {
+        compare = "M is greater than N";
+    }
+    else
+    {
+        compare = "Both are equal";
+    }
+    return compare;
+}
+ 
+
+var n =  11111;
+let text = n.toString();
+let len=text.length;
+if(len<=5)
+{
+document.write(reversecompare(text));
+}
+else
+{
+    document.write("number is more than 5 digit")
+}
+
+----------------------------Problem 4-------------------------------------------
+
+4) Write a program to accept 5 digit integer N and calculate the sum of its first and fifth digit.
+
+function sum(n)
+{
+    let first = n[0];
+    let fifth = n[4];
+    let num1 = parseInt(first);
+    let num2 = parseInt(fifth);
+    let sum = num1+num2;
+    return sum;
+    
+}
+ 
+
+var n =  12345;
+let text = n.toString();
+let len=text.length;
+if(len==5)
+{
+document.write(sum(text));
+}
+else
+{
+    document.write("number is not five digit")
+}
+
+----------------------------Problem 5-------------------------------------------
+
+5) Write a program to accept a 5 digit integer N and then generates a number M by adding 1 to each digit.
+
+function newnum(n,len)
+{
+    let sum="";
+    for(let i=0;i<len;i++)
+    {
+        let num=n[i];
+        let num1=parseInt(num);
+        num1=num1+1;
+        let num2=num1.toString();
+        sum=sum+num2;
+    }
+    return sum;
+    
+}
+ 
+
+var n =  12345;
+let text = n.toString();
+let len=text.length;
+if(len==5)
+{
+document.write(newnum(text, len));
+}
+else
+{
+    document.write("number is not five digit")
+}
+
+----------------------------Problem 6-------------------------------------------
+
+6) Accept cost price(CP) and Selling price(SP) of an item. Calculate the ammount of PROFIT/LOSS made 
+by the seller and print the result.
+
+
+let cp=500;
+let sp=700;
+let result="";
+if(sp>cp)
+{
+let res = sp-cp;
+result = "PROFIT = "+res;
+}
+else if(sp<cp)
+{
+    let res = cp-sp;
+    result = "LOSS = "+res;
+}
+else
+{
+    result = "No Profit No Los";
+}
+document.write(result)
+
+----------------------------Problem 7-------------------------------------------
+
+7) Write a program to a accept a list of N integers. Find the largest and the smallest number in the list
+ and their respective positions in the list.
+
+numbers = [2, 4, 9, 2, 0, 16, 24]
+
+var largest = numbers[0];
+var largeindex, smallindex;
+var smallest = numbers[0];
+
+for (var i = 1; i < numbers.length; i++) {
+
+  if (numbers[i] > largest) {
+    largest = numbers[i];
+    largeindex=i;
+  } else if (numbers[i] < smallest) {
+    smallest = numbers[i];
+    smallindex=i;
+  }
+
+ 
+}
+ console.log("largest value", largest);
+ console.log("largest value index in list ", largeindex++);
+ console.log("smallest value index in list ",smallest);
+ console.log("smallest value index in list ", smallindex++);
+
+----------------------------Problem 8-------------------------------------------
+
+8) Write a program to accept a list of N integers. Accept integer K. Find the Kth smallest number in the list and its position.
+
+function kthSmallest(arr, N, K)
+{
+    let arr1=arr;
+    arr.sort((a,b) => a-b);
+    console.log("kth smallest element in list", arr[K-1]);
+    let index;
+    for(let i=0;i<N;i++)
+    {
+        if(arr1[i]==arr[K-1])
+        {
+            index=i;
+        }
+    }
+console.log("kth smallest element index in list is", index);
+}
+ 
+
+    let arr = [12, 3, 5, 7, 19];
+    let N = arr.length, K = 2;
+    kthSmallest(arr, N, K);
+
+----------------------------Problem 9-------------------------------------------
+
+9) Write a program to accept a list L1 of N integers. Accept integer M. Multiply each integer in the list by M and 
+generate a new list L2. Print the lists L1 and L2.
+
+let n=prompt("enter a number");
+let L1 = [];
+for(let i=0;i<n;i++)
+{
+   L1[i]=prompt("enter list");
+}
+let m = prompt("enter second number to multiply with each element in list");
+let L2 = [];
+for(let j=0;j<n;j++)
+{
+    L2[j] = L1[j]*m;
+}
+console.log(L2);
+
+----------------------------Problem 10-------------------------------------------
+
+10) Write a program to accept a list L1 of N integers. Accept integer D. Generate list L2 such that it contains only those integers 
+from list L1 which are divisible by D. Calculate the size of list L2. Print the list L1, N, D, list L2 and its size.
+
+
+let n=prompt("enter a number");
+let L1 = [];
+for(let i=0;i<n;i++)
+{
+   L1[i]=prompt("enter list");
+}
+let D = prompt("enter d number ");
+let L2 = [];
+let p=0;
+for(let j=0;j<n;j++)
+{
+    if(L1[j]%D == 0)
+    {
+        L2[p]=L1[j];
+        p++;
+    }
+}
+console.log(L2);
+
+----------------------------Problem 11-------------------------------------------
+
+11)	Write a program to accept cardinality of set A as N, and cardinality of set B as M. Then accept elements of set A and set B. 
+Generate set C which is union of set A and set B, set D which is intersection set of set A and Set B. Print
+ set A, B, C, D, Cardinality of set C, Cardinality of set D.
+
+
+let n=prompt("enter a set a values");
+let m=prompt("enter a set b values");
+let setA = [];
+for(let i=0;i<n;i++)
+{
+  setA[i]=prompt("enter set A values");
+}
+let setB = [];
+for(let i=0;i<m;i++)
+{
+  setB[i]=prompt("enter set B values");
+}
+
+function findunion(setA, setB)
+{
+  let union = [...new Set([...setA, ...setB])];
+  return union;
+}
+
+function findintersection(setA, setB)
+{
+  let filteredArray = setA.filter(value => setB.includes(value));
+  return filteredArray;
+}
+//find out union set
+let unionset = findunion(setA, setB);
+let intersectionset = findintersection(setA, setB);
+console.log("set A", setA);
+console.log("set B", setB);
+console.log("union set C", unionset);
+console.log("intersection set D", intersectionset);
+
+
+----------------------------Problem 12-------------------------------------------
+
+12) Write a program to accept number of circles N and radius and coordinates of center (x,y) for each circle. 
+Select appropriate data structure and explain why you chose it. Arrange the circles in increasing order of their area and 
+print all the data of each circle.
+    
+
+let numofcircle = prompt("enter number of circle");
+let radius = [];
+let coordinates = [][];
+for(let i=0;i<numofcircle;i++)
+{
+  radius[i]=prompt("enter radius of circle = "+i);
+  for(let j=0;j<2;j++)
+  {
+  let x = prompt("enter coordinates  of circle = "+i);
+  coordinates[i][j]=x;
+  }
+}
+
+//find out area of all circles
+let area = [];
+for(let i=0;i<numofcircle;i++)
+{
+  let area=3.14*(radius[i]*radius[i]);
+  area[i]=area;
+}
+let icreasingindex = [];
+
+// it will find out kth smallest values from 0 to number of circle (area of circle)
+function kthSmallest(arr, N, K)
+{
+    arr.sort((a,b) => a-b);
+    return arr[K - 1];
+}
+
+//it will find out index of perticuler kth smallest value in area of circle
+function findindex(area[],value)
+{
+  let index = area.indexOf(value);
+  return index;
+}
+
+//find out increasing order of area and find out there index
+let p=0;
+for(let i=1;i<=numofcircle;i++)
+{
+  let value = kthSmallest(area, numofcircle,i);
+  let index = findindex(area,value);'
+  increasingindex[p]=index;
+  p++;
+}
+
+//print circle according to increasing order of there area
+for(let i=0;i<numofcircle;i++)
+{
+  let increasingorder = increasingindex[i];
+  console.log("area of circle  "+i+" = "+area[increasingorder]);
+  console.log("coordinates of circle "+i+" = "+"x ="+coordinates[increasingorder][0]+"y ="+coordinates[increasingorder][1])
+}
